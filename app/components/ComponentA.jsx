@@ -1,5 +1,5 @@
 function ComponentA() {
-  return <h1>Testing 1</h1>;
+  return <h2>Testing 1</h2>;
 }
 
 export default ComponentA;
