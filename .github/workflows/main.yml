@@ -1,9 +1,6 @@
 name: Tests for Next.js app
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -25,7 +22,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-        #   npm install --save-dev jest @types/jest babel-jest ts-jest
 
       - name: Run Jest tests
         run: npm test
