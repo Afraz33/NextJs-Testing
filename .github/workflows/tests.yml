@@ -9,20 +9,23 @@ on:
       - main
 
 jobs:
-  test:
+  NextJS-Tests:
+    name: Tests for Next.js app
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install --save-dev jest @types/jest babel-jest ts-jest
 
       - name: Run Jest tests
         run: npm test
